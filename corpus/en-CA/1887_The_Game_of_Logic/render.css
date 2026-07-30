@@ -1,0 +1,54 @@
+/* Print settings for this folder. The `render` skill picks this file up
+   automatically when it sits beside the markdown, so the book can be rebuilt
+   from the folder alone — no other file and no notes are needed.
+
+   Rendered with: quarto (markdown -> self-contained HTML) -> headless Chrome
+   (HTML -> PDF). See the skill for the two commands. */
+
+/* A4, book margins. */
+@page { size: A4; margin: 22mm 24mm; }
+
+/* One face for the whole book, and it must be a face with lining figures.
+   Carroll introduces his notation in running text — "I shall put '1' ... and
+   '0' ..." — so a digit in a sentence has to look exactly like the same digit
+   inside the diagram a line below. Georgia and most old-style faces set 0 at
+   x-height, where it reads as the letter o. */
+body, p, li, td, th, h1, h2, h3, h4 {
+  font-family: 'Times New Roman', 'Nimbus Roman', Times, serif;
+}
+body { font-size: 14.5pt; line-height: 1.5; }
+
+/* Measure. A line wants 60-75 characters; at 12.5pt across A4 this book ran to
+   about 95. The fix on a page this size is a larger type size, not a narrow
+   column stranded in the middle of the sheet: 14.5pt over the full text block
+   gives about 70. It also suits the reader — this is a book for a teenager. */
+
+/* A diagram and its exercise number are one block: the number must not be left
+   behind on the previous page. Only paragraphs that hold a diagram — forbidding
+   the break everywhere pushes whole paragraphs of prose over and leaves a third
+   of the page empty. */
+p:has(img), li:has(img), tr { break-inside: avoid; page-break-inside: avoid; }
+h1, h2, h3 { break-after: avoid; page-break-after: avoid; }
+
+/* Carroll sets the exercise diagrams two to a row — 1887, pp. 45-48 and 62,
+   67. That layout is already in these files: such a pair is one paragraph
+   holding two lines, one diagram to a line. Set one under the other, each
+   leaves two thirds of the measure empty and often half the page after it.
+   Two columns put them back the way the book has them.
+
+   The test is a line break right after a diagram, plus a second diagram in
+   the same paragraph. Both halves are needed. Diagrams also occur inside
+   running prose — ch. III no. 7 has two in one sentence — and there they are
+   not on lines of their own, so no break follows them and the sentence is
+   left whole. The same holds for the answers of ch. III §7, where the larger
+   and the smaller Diagram of one answer stand together on a single line.
+
+   A pair is two lines, one to a column, and a browser will not by default
+   leave a line standing alone in a column — hence orphans and widows, set
+   here and nowhere else. */
+p:has(img + br):has(img ~ img) {
+  columns: 2; column-gap: 6mm; orphans: 1; widows: 1;
+}
+
+img { vertical-align: middle; }
+table td, table th { vertical-align: middle; }
