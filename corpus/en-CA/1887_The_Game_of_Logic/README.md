@@ -33,7 +33,7 @@ This is a present-day Canadian edition for a high-school reader, not a facsimile
 Open any chapter and a diagram looks like this:
 
 ```
-![](media/02-013.svg "BIL c6=1 c8=0")
+![](media/02-025.svg "BIL c6=1 c8=0")
 ```
 
 The line in quotation marks is the diagram itself, written out. The picture is drawn from it, so it is the line that is edited, never the drawing.
