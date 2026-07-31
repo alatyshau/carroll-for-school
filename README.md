@@ -13,6 +13,8 @@ notes and half-done chapters live outside it and arrive only when ready.
   reader's typographic norm, not merely by language.
 * `lib/logic_diagrams/` — the diagram tooling and the self-checks that let
   the book verify itself; see its [README](lib/logic_diagrams/README.md).
+* `lib/render/` — the scripts that build the printable book, markdown →
+  HTML → PDF; see its [README](lib/render/README.md).
 
 ## License
 

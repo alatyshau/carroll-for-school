@@ -23,6 +23,11 @@ epigraph, and links to the sections. Chapter IV has no sections and stays a
 single file. The full contents with page numbers is the book's own, in
 [00_preface.md](00_preface.md).
 
+**Printing it.** The repository turns these files into printouts — one PDF per
+section, so the book can be handed out in the pieces it is built from. How to
+run it, and in what order to give the pieces to a class, is in
+[lib/render/README.md](../../../lib/render/README.md).
+
 ---
 
 ## Source

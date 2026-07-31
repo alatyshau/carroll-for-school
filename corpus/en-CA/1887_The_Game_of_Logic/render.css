@@ -1,12 +1,21 @@
-/* Print settings for this folder. The `render` skill picks this file up
+/* Print settings for this folder. The scripts in lib/render pick this file up
    automatically when it sits beside the markdown, so the book can be rebuilt
    from the folder alone — no other file and no notes are needed.
 
    Rendered with: quarto (markdown -> self-contained HTML) -> headless Chrome
-   (HTML -> PDF). See the skill for the two commands. */
+   (HTML -> PDF). See lib/render/README.md. */
 
-/* A4, book margins. */
-@page { size: A4; margin: 22mm 24mm; }
+/* A4, slim margins. The book is printed two pages to one A4 sheet (the
+   print dialog's "2 pages per sheet", which scales a page by 0.71), so the
+   sheet's own edges and the gutter between the two halves supply whitespace
+   of their own; wide book margins on top of that waste a third of the sheet. */
+@page { size: A4; margin: 14mm 12mm; }
+
+/* Quarto's article layout pads the top of the content column for the screen;
+   on paper it costs a third of the first page. */
+@media print {
+  #quarto-content, main.content { padding-top: 0 !important; }
+}
 
 /* One face for the whole book, and it must be a face with lining figures.
    Carroll introduces his notation in running text — "I shall put '1' ... and
@@ -16,12 +25,13 @@
 body, p, li, td, th, h1, h2, h3, h4 {
   font-family: 'Times New Roman', 'Nimbus Roman', Times, serif;
 }
-body { font-size: 14.5pt; line-height: 1.5; }
+body { font-size: 16pt; line-height: 1.5; }
 
 /* Measure. A line wants 60-75 characters; at 12.5pt across A4 this book ran to
    about 95. The fix on a page this size is a larger type size, not a narrow
-   column stranded in the middle of the sheet: 14.5pt over the full text block
-   gives about 70. It also suits the reader — this is a book for a teenager. */
+   column stranded in the middle of the sheet: 16pt over the full text block
+   gives about 73. It also suits the reader — this is a book for a teenager,
+   and two-to-a-sheet printing scales the type to an effective ~11.3pt. */
 
 /* A diagram and its exercise number are one block: the number must not be left
    behind on the previous page. Only paragraphs that hold a diagram — forbidding
