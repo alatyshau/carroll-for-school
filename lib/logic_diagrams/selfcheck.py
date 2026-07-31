@@ -20,7 +20,7 @@ silently skipped problem would look like a checked one.
 edition itself, left as printed, with an editor's note added to the text (see
 the edition's README).  Any other mismatch is a regression.
 """
-import argparse, json, os, re, sys
+import argparse, re, sys
 import compare_diagrams, notation
 
 SECTIONS = ['2', '3', '4', '5']
@@ -145,9 +145,9 @@ def parse(sentence):
 
 
 # ------------------------------------------------------------------ material
-def sections_of(path):
-    """Chapter file -> {section number: section text}."""
-    txt = open(path, encoding='utf-8').read()
+def sections_of(book, chapter):
+    """{section number: section text} of a chapter, from its section files."""
+    txt = compare_diagrams.chapter_markdown(chapter, book)
     parts = re.split(r'^### (\d+)\.\s*', txt, flags=re.M)
     return {parts[i]: parts[i + 1] for i in range(1, len(parts), 2)}
 
@@ -182,8 +182,8 @@ def numbered_figs(block, models=None):
 
 
 def main(book):
-    ch2 = sections_of(os.path.join(book, '02_cross_questions.md'))
-    ch3 = sections_of(os.path.join(book, '03_crooked_answers.md'))
+    ch2 = sections_of(book, 2)
+    ch3 = sections_of(book, 3)
     m2 = compare_diagrams.english_models(2, book)
     m3 = compare_diagrams.english_models(3, book)
 

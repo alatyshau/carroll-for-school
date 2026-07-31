@@ -33,13 +33,13 @@ text out. Pure geometry — no imports, no file paths, no knowledge of any
 edition.
 
 **`svg_from_md.py`** regenerates an edition's pictures. It scans every
-markdown file in the edition folder — the chapters and the edition's README
-alike — draws each title string with the two modules above, and compares the
-results with the files in `media/`. Without `--write` nothing is touched:
-all zeros in the report means every picture matches its title, and the
-script also fails if two mentions of one file carry contradicting titles.
-With `--write` it rewrites the SVG files. Run it after any edit to a title
-string.
+markdown file of the edition — at the root and in the chapter folders —
+draws each title string with the two modules above, and compares the results
+with the `media/` folder that sits beside each markdown file. Without
+`--write` nothing is touched: all zeros in the report means every picture
+matches its title, and the script also fails if two mentions of one file
+carry contradicting titles. With `--write` it rewrites the SVG files. Run it
+after any edit to a title string.
 
 **`selfcheck.py`** proof-reads the book against itself on the smaller
 Diagram. *The Game of Logic* contains its own answer key — Chapter III

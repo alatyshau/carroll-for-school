@@ -71,23 +71,23 @@ A second advantage, possessed by this Game, is that, besides being an endless so
 | CHAPTER | | PAGE |
 |---|---|---|
 | **I.** | [NEW LAMPS FOR OLD.](01_new_lamps_for_old.md) |  |
-| | 1. Propositions | 1 |
-| | 2. Syllogisms | 20 |
-| | 3. Fallacies | 32 |
+| | [1. Propositions](01_new_lamps_for_old/01_propositions.md) | 1 |
+| | [2. Syllogisms](01_new_lamps_for_old/02_syllogisms.md) | 20 |
+| | [3. Fallacies](01_new_lamps_for_old/03_fallacies.md) | 32 |
 | **II.** | [CROSS QUESTIONS.](02_cross_questions.md) |  |
-| | 1. Elementary | 37 |
-| | 2. Half of Smaller Diagram. Propositions to be represented | 40 |
-| | 3. Do. Symbols to be interpreted | 42 |
-| | 4. Smaller Diagram.  Propositions to be represented | 44 |
-| | 5. Do. Symbols to be interpreted | 46 |
-| | 6. Larger Diagram.  Propositions to be represented | 48 |
-| | 7. Both Diagrams to be employed | 51 |
+| | [1. Elementary](02_cross_questions/01_elementary.md) | 37 |
+| | [2. Half of Smaller Diagram. Propositions to be represented](02_cross_questions/02_half_smaller_propositions.md) | 40 |
+| | [3. Do. Symbols to be interpreted](02_cross_questions/03_half_smaller_symbols.md) | 42 |
+| | [4. Smaller Diagram.  Propositions to be represented](02_cross_questions/04_smaller_propositions.md) | 44 |
+| | [5. Do. Symbols to be interpreted](02_cross_questions/05_smaller_symbols.md) | 46 |
+| | [6. Larger Diagram.  Propositions to be represented](02_cross_questions/06_larger_diagram.md) | 48 |
+| | [7. Both Diagrams to be employed](02_cross_questions/07_both_diagrams.md) | 51 |
 | **III.** | [CROOKED ANSWERS.](03_crooked_answers.md) |  |
-| | 1. Elementary | 55 |
-| | 2. Half of Smaller Diagram.  Propositions represented | 59 |
-| | 3. Do.  Symbols interpreted | 61 |
-| | 4. Smaller Diagram. Propositions represented | 62 |
-| | 5. Do.  Symbols interpreted | 65 |
-| | 6. Larger Diagram. Propositions represented | 67 |
-| | 7. Both Diagrams employed | 72 |
+| | [1. Elementary](03_crooked_answers/01_elementary.md) | 55 |
+| | [2. Half of Smaller Diagram.  Propositions represented](03_crooked_answers/02_half_smaller_propositions.md) | 59 |
+| | [3. Do.  Symbols interpreted](03_crooked_answers/03_half_smaller_symbols.md) | 61 |
+| | [4. Smaller Diagram. Propositions represented](03_crooked_answers/04_smaller_propositions.md) | 62 |
+| | [5. Do.  Symbols interpreted](03_crooked_answers/05_smaller_symbols.md) | 65 |
+| | [6. Larger Diagram. Propositions represented](03_crooked_answers/06_larger_diagram.md) | 67 |
+| | [7. Both Diagrams employed](03_crooked_answers/07_both_diagrams.md) | 72 |
 | **IV.** | [HIT OR MISS](04_hit_or_miss.md) | 85 |

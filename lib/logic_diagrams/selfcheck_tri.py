@@ -21,7 +21,7 @@ Companion to selfcheck.py (which covers §§2-5, the smaller diagram).  Here:
 Anything that fails to parse is printed with a '?' and does not count: a
 silently skipped problem would look like a checked one.
 """
-import argparse, os, re, sys
+import argparse, re, sys
 import compare_diagrams, selfcheck
 
 # ------------------------------------------------------------------- model
@@ -182,10 +182,6 @@ def transfer(counters):
 
 
 # ------------------------------------------------------------------ material
-def sections_of(path):
-    return selfcheck.sections_of(path)
-
-
 def items(block):
     """Section -> {item number: item body} (items of the form **N.** or N.)."""
     parts = re.split(r'^(?:\*\*(\d+)\.\*\*|(\d+)\.)\s+', block, flags=re.M)
@@ -292,8 +288,8 @@ def compare_concl(tag, sentences, small, stats):
 
 
 def main(book):
-    ch2s = sections_of(os.path.join(book, '02_cross_questions.md'))
-    ch3s = sections_of(os.path.join(book, '03_crooked_answers.md'))
+    ch2s = selfcheck.sections_of(book, 2)
+    ch3s = selfcheck.sections_of(book, 3)
     m2 = compare_diagrams.english_models(2, book)
     m3 = compare_diagrams.english_models(3, book)
     q6 = selfcheck.numbered_text(ch2s['6'])

@@ -16,6 +16,13 @@ Introduction to syllogisms through a board game: on a diagram of intersecting re
 | 3 | [03_crooked_answers.md](03_crooked_answers.md) | Chapter III. Crooked Answers |
 | 4 | [04_hit_or_miss.md](04_hit_or_miss.md) | Chapter IV. Hit or Miss |
 
+Chapters I–III are folders of section files — one file per numbered section
+of the chapter, with the chapter's diagrams in a `media/` folder beside them.
+The chapter file at the root is the chapter's index: its heading, its
+epigraph, and links to the sections. Chapter IV has no sections and stays a
+single file. The full contents with page numbers is the book's own, in
+[00_preface.md](00_preface.md).
+
 ---
 
 ## Source

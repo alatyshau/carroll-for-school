@@ -78,8 +78,13 @@ def decode(alt):
 # the folder renders the same anywhere, with no flag to remember and no rule in
 # the stylesheet to suppress anything.
 IMG = re.compile(r'!\[\]\(media/([^)"\s]+\.svg)\s+"([^"]*)"\)')
+FENCE = re.compile(r'^```.*?^```[ \t]*$', re.M | re.S)
 
 
 def images(md):
-    """Every diagram of a markdown file, in the order it is printed."""
-    return [(m.group(1), m.group(2)) for m in IMG.finditer(md)]
+    """Every diagram of a markdown file, in the order it is printed.
+
+    Fenced code blocks are skipped: an image line inside a fence is an
+    example being shown, not a diagram of the book.
+    """
+    return [(m.group(1), m.group(2)) for m in IMG.finditer(FENCE.sub('', md))]

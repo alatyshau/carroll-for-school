@@ -24,6 +24,16 @@ CHAPTER_FILE = {1: '01_new_lamps_for_old', 2: '02_cross_questions',
                 3: '03_crooked_answers', 4: '04_hit_or_miss'}
 
 
+def chapter_markdown(chapter, book):
+    """The chapter's whole markdown: its section files in print order, or the
+    single chapter file when the chapter has no section folder (Ch. IV)."""
+    folder = os.path.join(book, CHAPTER_FILE[chapter])
+    if os.path.isdir(folder):
+        return ''.join(open(os.path.join(folder, f), encoding='utf-8').read()
+                       for f in sorted(os.listdir(folder)) if f.endswith('.md'))
+    return open(folder + '.md', encoding='utf-8').read()
+
+
 def english_models(chapter, book=DEFAULT_EDITION):
     """The chapter's diagrams, in print order, from the folder's own image titles.
 
@@ -32,9 +42,8 @@ def english_models(chapter, book=DEFAULT_EDITION):
     the source corrections already applied.  So the check speaks about the
     book the reader is actually holding.
     """
-    md = open(os.path.join(book, CHAPTER_FILE[chapter] + '.md'), encoding='utf-8').read()
     out = []
-    for _name, title in notation.images(md):
+    for _name, title in notation.images(chapter_markdown(chapter, book)):
         kind, counters, _labels, _numbers = notation.decode(title)
         out.append((kind, counters))
     return out
